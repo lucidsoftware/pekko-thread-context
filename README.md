@@ -4,9 +4,9 @@ This currently lacks much of what you would expect to find for Akka Actors.
 
 ## SpanManager support
 
-`ManagedSpan`s can be propogated in local actor systems with `SpanManagerExecutorConfigurator`.
+`ManagedSpan`s can be propogated in local actor systems with `DefaultSpanManagerExecutorConfigurator`.
 
-Replace
+In configuration, replace
 
 ```hocon
 actor {
@@ -18,6 +18,8 @@ actor {
     }
 }
 ```
+
+with
 
 ```hocon
 actor {
