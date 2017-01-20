@@ -21,7 +21,7 @@ deploy:
 git:
   depth: 1
 jdk:
-  - openjdk8
+  - openjdk7
 language: scala
 script:
   - sbt +package
