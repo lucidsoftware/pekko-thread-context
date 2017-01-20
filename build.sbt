@@ -8,7 +8,13 @@ lazy val `opentracing-spanmanager` = externalPomProject(
   uri("git://github.com/opentracing-contrib/java-activespan.git#23885b8a")
 )
 
-lazy val `akka-actor-spanmanager` = project.dependsOn(`opentracing-globaltracer`, `opentracing-spanmanager`)
+lazy val `akka-actor-spanmanager` = project.dependsOn(`opentracing-globaltracer`, `opentracing-spanmanager`).cross
+
+lazy val `akka-actor-spanmanager_2.11` = `akka-actor-spanmanager`("2.11.8").copy(base = file("akka-actor-spanmanager"))
+
+lazy val `akka-actor-spanmanager_2.12` = `akka-actor-spanmanager`("2.12.1").copy(base = file("akka-actor-spanmanager"))
+
+lazy val `akka-actor-spanmanager-aggregate` = `akka-actor-spanmanager`.aggregate(`akka-actor-spanmanager_2.11`, `akka-actor-spanmanager_2.12`)
 
 inScope(Global)(Seq(
   credentials += Credentials("Sonatype Nexus Repository Manager", "oss.sonatype.org", sys.env.getOrElse("SONATYPE_USERNAME", ""), sys.env.getOrElse("SONATYPE_PASSWORD", "")),

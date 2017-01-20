@@ -3,7 +3,7 @@ after_success:
     if [ "$TRAVIS_PULL_REQUEST" == false ] && [ "$TRAVIS_BRANCH" == master ]; then
         echo $PGP_PUBLIC | base64 --decode > ~/.gnupg/pubring.gpg
         echo $PGP_SECRET | base64 --decode > ~/.gnupg/secring.gpg
-        sbt +akka-actor-spanmanager/publishSigned sonatypeReleaseAll
+        sbt akka-actor-spanmanager/publishSigned sonatypeReleaseAll
     fi
 cache:
   directories:
@@ -20,7 +20,7 @@ deploy:
 git:
   depth: 1
 jdk:
-  - openjdk7
+  - oraclejdk8
 language: scala
 script:
-  - sbt +package
+  - sbt package
