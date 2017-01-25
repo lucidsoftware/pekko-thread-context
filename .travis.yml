@@ -2,9 +2,9 @@ after_success: |
   if [ "$TRAVIS_SECURE_ENV_VARS" == true ]; then
     echo "$PGP_SECRET" | base64 --decode | gpg --import
     if [ -z "$TRAVIS_TAG" ]; then
-        (cd sbt-cross && exec sbt publishSigned)
+        sbt publishSigned
     else
-        (cd sbt-cross && exec sbt publishSigned sonatypeRelease)
+        sbt publishSigned sonatypeRelease
     fi
   fi
 cache:
@@ -25,4 +25,4 @@ jdk: openjdk7
 language: scala
 script:
   - '[ "$TRAVIS_PULL_REQUEST" != false ] || export SBT_OPTS=-Dbuild.version=${TRAVIS_TAG:-$TRAVIS_BRANCH-SNAPSHOT}'
-  - (cd sbt-cross && exec sbt package)
+  - sbt package
