@@ -18,5 +18,5 @@ inScope(Global)(Seq(
     "scm:git:git@github.com:lucidsoftware/opentracing-akka-actor.git"
   )),
   startYear := Some(2017),
-  version := "0.0-SNAPSHOT"
+  version := sys.props.getOrElse("build.version", "0-SNAPSHOT")
 ))
