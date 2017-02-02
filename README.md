@@ -1,6 +1,15 @@
 # OpenTracing for Akka Actors
 
+[![Build Status](https://travis-ci.org/lucidsoftware/opentracing-akka-actor.svg?branch=master)](https://travis-ci.org/lucidsoftware/opentracing-akka-actor)
+![Maven Version](https://img.shields.io/maven-central/v/com.lucidchart/opentracing-akka-actor_2.11.svg)
+
 This currently lacks much of what you would expect to find for Akka Actors.
+
+## Install
+
+```scala
+libraryDependencies += "com.lucidchart" %% "opentracing-akka-actor" % "<version>"
+```
 
 ## SpanManager support
 
