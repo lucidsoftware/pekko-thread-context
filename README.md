@@ -1,9 +1,12 @@
-# OpenTracing for Akka Actors
+# Akka actor thread context
 
 [![Build Status](https://travis-ci.org/lucidsoftware/akka-context.svg?branch=master)](https://travis-ci.org/lucidsoftware/akka-context)
 ![Maven Version](https://img.shields.io/maven-central/v/com.lucidchart/akka-actor-context_2.11.svg)
 
-This currently lacks much of what you would expect to find for Akka Actors.
+Propagate thread-local values across Akka actors. See
+[java-thread-context](https://github.com/lucidsoftware/java-thread-context).
+
+Currently works only for local actor systems.
 
 ## Install
 
@@ -16,5 +19,5 @@ libraryDependencies += "com.lucidchart" %% "akka-context" % "<version>"
 In configuration,
 
 ```hocon
-actor.default-dispatcher.type = com.lucidchart.akka.context.DispatchConfigurator
+actor.default-dispatcher.type = com.lucidchart.akka.threadcontext.DispatchConfigurator
 ```

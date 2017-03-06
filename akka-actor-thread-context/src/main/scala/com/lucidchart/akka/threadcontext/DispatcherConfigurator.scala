@@ -1,7 +1,7 @@
-package com.lucidchart.akka.context
+package com.lucidchart.akka.threadcontext
 
 import akka.dispatch.{Dispatcher, DispatcherPrerequisites, MessageDispatcherConfigurator}
-import com.lucidchart.threadcontext.ContextManager
+import com.github.threadcontext.ThreadContext
 import com.typesafe.config.Config
 import java.util.concurrent.TimeUnit
 import scala.concurrent.duration.DurationLong
@@ -15,6 +15,6 @@ class DispatcherConfigurator(config: Config, prerequisites: DispatcherPrerequisi
     configureExecutor(),
     config.getDuration("shutdown-timeout", TimeUnit.MILLISECONDS).millis
   ) { dispatcher =>
-    override def execute(runnable: Runnable) = super.execute(ContextManager.runnable(runnable))
+    override def execute(runnable: Runnable) = super.execute(ThreadContext.runnable(runnable))
   }
 }
