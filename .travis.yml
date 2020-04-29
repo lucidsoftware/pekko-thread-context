@@ -21,6 +21,7 @@ deploy:
   skip_cleanup: true
 git:
   depth: 1
+dist: bionic
 jdk: openjdk8
 language: scala
 script:
