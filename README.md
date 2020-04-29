@@ -1,6 +1,6 @@
 # Akka actor thread context
 
-[![Build Status](https://travis-ci.org/lucidsoftware/akka-thread-context.svg?branch=master)](https://travis-ci.org/lucidsoftware/akka-thread-context)
+[![Build Status](https://travis-ci.com/lucidsoftware/akka-thread-context.svg?branch=master)](https://travis-ci.com/lucidsoftware/akka-thread-context)
 ![Maven Version](https://img.shields.io/maven-central/v/com.lucidchart/akka-actor-thread-context_2.11.svg)
 
 Propagate thread-local values across Akka actors. See
