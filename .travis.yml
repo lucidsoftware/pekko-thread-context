@@ -4,7 +4,7 @@ after_success: |
     if [ -z "$TRAVIS_TAG" ]; then
         sbt publishSigned
     else
-        sbt publishSigned sonatypeRelease
+        sbt '; publishSigned; sonatypeBundleRelease'
     fi
   fi
 cache:
@@ -13,7 +13,7 @@ cache:
     - "$HOME/.sbt"
 deploy:
   api_key:
-    secure: bniZldnzX85UegsYTW86aBW5HUn8E3htsmgrhC6MaRW7WXWJN5NEQvbXAcexBmBcBGWJYwW2YHOm613LHlCXKdg+zM7CtrbMxrdwBWbHoQ5zR2ehhqiiqIBr9s4gWKnTJDgPtubA9qWmt718Zwbocy8nvbvSG9vVaXX3pe6tQy4RMhmLry/K14vsuJUbY4oi+zgZeN7zoWpqD9snE9vU1gIe+Duzjy5xKmarnyIE+3wXyNotAEvp462YjxBJM38TXdlMBaD5Fr6yUVbQqdIwVuzFwptfWDXmvz6Hob++hQqyXO4C/q70zDeT19NuUwHQGK5+IBabVd6TSnlqpJTIx/CDIKVA1Gg5S4DMSo+jS5e9YaVmHmyGm7c8i7jwSRJo+oVU4KVxbTp2hekTPhPCmMNZm95S/IxhSi4i3usN2vxzlXDI05xR1XUdMuGutwdKO4svLc6ZM9NXzUVkksBm3f2JWnpxDbKSorIFrW0rJ7F4ock6ivjpteJw/XhXuzCQv6kG8RdZsllmUMB1uBPCrE+Kgjz6htzvJcgE77mVFS8WqvZXkFsIibtBBxHtE3Ewzgv0aSEsM1ZbNPg+ARQH4ZPoFKyXVB01RPbJMYG/a74pPQ+XW8SR5AlO5kmVjPBEnCJftBinTe8ydg2Mo5P+eFs375kS4MgV3tcyc4J31Bk=
+    secure: a9wWFPZZgoD55nxr+uxYOunYxdLxkWicmTsD6W+/an4my0F0smGSTxosMGQzjsAGu+XiTON4anfJ/KtlE5SKKshImycQdGyHU45LoDkBKuP04NseCiSF/XjEC+4PWanRIy3tOPVUzW5M89T8ZTFGmwkNvAfGVq3uuc1uvvvAKOyZ/zXnNiMwyEodyMkump5GdSHha+Dv3+LRimM69Xzyq51tRl98ix2CqcrIziz374BHiRQZ97V9O7LlLB1eZ6M1etWaSciC1dFNK2qa6W1IA6AIS5ZY+LqewNe6HJc94nTl/6DS0ZO6+i7ldBfBQGlY0SETRCE//I2Uscq6pCWvFWZc/OXZoEeMcU1fFUcYkEsgYUYiKwfYWvfpRjWYGGRvQO+Us+3T3t7Ix9JGa/IhIvk2ZnmM6mN4JXkLEXo9yqOv4zQLACp5DvqIBjB6KYjrNHELqm3PCuhG01EDVnkXJA6oL8+np+Coc6XaUUiz4RAHE4QMQU8CwWcHN1RnSJ+TzQ2gGrVYxSI7iiQ13uGcUBhJfa0VW42MUruPMFegoPRhMrPbd4aFCzWUaiJDqbeBbfLknbuHtnKgKiMNfAhicQMWudUvq9/ib6diziVoA3BD4fOC1SINI1ry5WZXFGyO2zge4ie7vtT4VoPG1/G8Is5U1Y/Ml0ZvVA1iQZRmHvE=
   file: '*/target/**/*.jar'
   file_glob: true
   on:
