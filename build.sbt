@@ -1,7 +1,8 @@
 lazy val `akka-actor-thread-context` = project.cross
 
-lazy val `akka-actor-thread-context_2.11` = `akka-actor-thread-context`("2.11.8")
-lazy val `akka-actor-thread-context_2.12` = `akka-actor-thread-context`("2.12.1")
+lazy val `akka-actor-thread-context_2.11` = `akka-actor-thread-context`("2.11.12")
+lazy val `akka-actor-thread-context_2.12` = `akka-actor-thread-context`("2.12.11")
+lazy val `akka-actor-thread-context_2.13` = `akka-actor-thread-context`("2.13.2")
 
 inScope(Global)(Seq(
   credentials += Credentials("Sonatype Nexus Repository Manager", "oss.sonatype.org", sys.env.getOrElse("SONATYPE_USERNAME", ""), sys.env.getOrElse("SONATYPE_PASSWORD", "")),
@@ -13,7 +14,7 @@ inScope(Global)(Seq(
   organizationName := "Lucid Software",
   PgpKeys.pgpPassphrase := Some(Array.emptyCharArray),
   resolvers += Resolver.typesafeRepo("releases"),
-  scalaVersion := "2.11.8",
+  scalaVersion := "2.13.2",
   scmInfo := Some(ScmInfo(
     url("https://github.com/lucidsoftware/akka-thread-context"),
     "scm:git:git@github.com:lucidsoftware/akka-thread-context.git"
