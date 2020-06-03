@@ -20,6 +20,7 @@ inScope(Global)(Seq(
     "scm:git:git@github.com:lucidsoftware/akka-thread-context.git"
   )),
   startYear := Some(2017),
+  publishMavenStyle := true,
   version := sys.props.getOrElse("build.version", "0-SNAPSHOT")
 ))
 
