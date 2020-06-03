@@ -9,14 +9,16 @@ after_success: |
   fi
 cache:
   directories:
-    - $HOME/.ivy2
-    - $HOME/.sbt
+    - "$HOME/.ivy2"
+    - "$HOME/.sbt"
 deploy:
-  api_key: $GITHUB_AUTH
+  api_key:
+    secure: bniZldnzX85UegsYTW86aBW5HUn8E3htsmgrhC6MaRW7WXWJN5NEQvbXAcexBmBcBGWJYwW2YHOm613LHlCXKdg+zM7CtrbMxrdwBWbHoQ5zR2ehhqiiqIBr9s4gWKnTJDgPtubA9qWmt718Zwbocy8nvbvSG9vVaXX3pe6tQy4RMhmLry/K14vsuJUbY4oi+zgZeN7zoWpqD9snE9vU1gIe+Duzjy5xKmarnyIE+3wXyNotAEvp462YjxBJM38TXdlMBaD5Fr6yUVbQqdIwVuzFwptfWDXmvz6Hob++hQqyXO4C/q70zDeT19NuUwHQGK5+IBabVd6TSnlqpJTIx/CDIKVA1Gg5S4DMSo+jS5e9YaVmHmyGm7c8i7jwSRJo+oVU4KVxbTp2hekTPhPCmMNZm95S/IxhSi4i3usN2vxzlXDI05xR1XUdMuGutwdKO4svLc6ZM9NXzUVkksBm3f2JWnpxDbKSorIFrW0rJ7F4ock6ivjpteJw/XhXuzCQv6kG8RdZsllmUMB1uBPCrE+Kgjz6htzvJcgE77mVFS8WqvZXkFsIibtBBxHtE3Ewzgv0aSEsM1ZbNPg+ARQH4ZPoFKyXVB01RPbJMYG/a74pPQ+XW8SR5AlO5kmVjPBEnCJftBinTe8ydg2Mo5P+eFs375kS4MgV3tcyc4J31Bk=
   file: '*/target/**/*.jar'
   file_glob: true
   on:
     tags: true
+    repo: lucidsoftware/akka-thread-context
   provider: releases
   skip_cleanup: true
 git:
