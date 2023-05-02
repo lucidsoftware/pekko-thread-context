@@ -3,3 +3,9 @@
 
 target/
 target-*/
+project/project/
+
+# Metals
+.metals/
+build.sbt.semanticdb
+project/metals.sbt
