@@ -2,8 +2,8 @@ lazy val `akka-actor-thread-context` = project.cross
 
 lazy val commonSettings = Seq(publishTo := sonatypePublishToBundle.value)
 
-lazy val `akka-actor-thread-context_2.12` = `akka-actor-thread-context`("2.12.14").settings(commonSettings)
-lazy val `akka-actor-thread-context_2.13` = `akka-actor-thread-context`("2.13.6").settings(commonSettings)
+lazy val `akka-actor-thread-context_2.12` = `akka-actor-thread-context`("2.12.17").settings(commonSettings)
+lazy val `akka-actor-thread-context_2.13` = `akka-actor-thread-context`("2.13.10").settings(commonSettings)
 
 inScope(Global)(Seq(
   credentials += Credentials("Sonatype Nexus Repository Manager", "oss.sonatype.org", sys.env.getOrElse("SONATYPE_USERNAME", ""), sys.env.getOrElse("SONATYPE_PASSWORD", "")),
