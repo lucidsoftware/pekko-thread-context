@@ -66,8 +66,4 @@ jobs:
       - name: Upload Assets
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: |
-          set -x
-￼         tag="${GITHUB_REF#refs/tags/}"
-￼         targets=($(printf -- "-a %s " */target/*.jar))
-￼         hub release create "${targets[@]}" -m "Release $tag" $tag
+        run: bash release.sh
