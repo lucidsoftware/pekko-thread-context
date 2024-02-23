@@ -13,7 +13,6 @@ inScope(Global)(Seq(
   organization := "com.lucidchart",
   organizationHomepage := Some(url("http://github.com/lucidsoftware")),
   organizationName := "Lucid Software",
-  PgpKeys.pgpPassphrase := Some(Array.emptyCharArray),
   resolvers += Resolver.typesafeRepo("releases"),
   scalaVersion := "2.13.6",
   scmInfo := Some(ScmInfo(
@@ -25,4 +24,4 @@ inScope(Global)(Seq(
   version := sys.props.getOrElse("build.version", "0-SNAPSHOT")
 ))
 
-publishTo := sonatypePublishToBundle.value
+publish / skip := true
