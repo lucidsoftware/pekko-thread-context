@@ -1,6 +1,6 @@
-package com.lucidchart.akka.threadcontext
+package com.lucidchart.pekko.threadcontext
 
-import akka.dispatch.{Dispatcher, DispatcherPrerequisites, MessageDispatcherConfigurator}
+import org.apache.pekko.dispatch.{Dispatcher, DispatcherPrerequisites, MessageDispatcherConfigurator}
 import com.github.threadcontext.Context
 import com.typesafe.config.Config
 import java.util.concurrent.TimeUnit

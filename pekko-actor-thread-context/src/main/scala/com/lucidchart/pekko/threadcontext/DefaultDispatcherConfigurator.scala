@@ -1,6 +1,6 @@
-package com.lucidchart.akka.threadcontext
+package com.lucidchart.pekko.threadcontext
 
-import akka.dispatch.DispatcherPrerequisites
+import org.apache.pekko.dispatch.DispatcherPrerequisites
 import com.github.threadcontext.Context
 import com.typesafe.config.Config
 
