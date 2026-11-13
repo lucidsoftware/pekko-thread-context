@@ -6,7 +6,7 @@ lazy val root = (project in file("."))
   )
 
 lazy val `pekko-actor-thread-context` = (project in file("pekko-actor-thread-context"))
-  .settings(crossScalaVersions := Seq("2.12.21", "2.13.18"))
+  .settings(crossScalaVersions := Seq("2.12.21", "2.13.18", "3.3.9"))
 
 inScope(Global)(Seq(
   developers += Developer("pauldraper", "Paul Draper", "paulddraper@gmail.com", uri("https://github.com/pauldraper")),
@@ -16,7 +16,7 @@ inScope(Global)(Seq(
   organizationHomepage := Some(uri("http://github.com/lucidsoftware")),
   organizationName := "Lucid Software",
   resolvers += Resolver.typesafeRepo("releases"),
-  scalaVersion := "2.13.18",
+  scalaVersion := "3.3.9",
   scmInfo := Some(ScmInfo(
     uri("https://github.com/lucidsoftware/pekko-thread-context"),
     "scm:git:git@github.com:lucidsoftware/pekko-thread-context.git"

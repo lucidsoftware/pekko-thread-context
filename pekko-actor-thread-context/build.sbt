@@ -1,5 +1,5 @@
 libraryDependencies ++= Seq(
-  "org.apache.pekko" %% "pekko-actor" % "1.0.2",
+  "org.apache.pekko" %% "pekko-actor" % "1.2.1",
   "com.lucidchart" % "thread-context" % "0.8"
 )
 publishTo := {
