@@ -4,6 +4,7 @@ lazy val commonSettings = Seq(publishTo := sonatypePublishToBundle.value)
 
 lazy val `pekko-actor-thread-context_2.12` = `pekko-actor-thread-context`("2.12.14").settings(commonSettings)
 lazy val `pekko-actor-thread-context_2.13` = `pekko-actor-thread-context`("2.13.12").settings(commonSettings)
+lazy val `pekko-actor-thread-context_3` = `pekko-actor-thread-context`("3.3.9").settings(commonSettings)
 
 inScope(Global)(Seq(
   credentials += Credentials("Sonatype Nexus Repository Manager", "oss.sonatype.org", sys.env.getOrElse("SONATYPE_USERNAME", ""), sys.env.getOrElse("SONATYPE_PASSWORD", "")),

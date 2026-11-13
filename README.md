@@ -8,6 +8,8 @@ Propagate thread-local values across Pekko actors. See
 
 Currently works only for local actor systems.
 
+Cross-built for Scala 2.12, 2.13, and 3.
+
 ## Install
 
 ```scala
