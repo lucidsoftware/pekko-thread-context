@@ -8,7 +8,7 @@ import java.util.function.Supplier
 import scala.concurrent.duration.DurationLong
 
 class DispatcherConfigurator(config: Config, prerequisites: DispatcherPrerequisites, contextSupplier: Supplier[Context]) extends MessageDispatcherConfigurator(config, prerequisites) {
-  override val dispatcher = new Dispatcher(
+  private val configuredDispatcher = new Dispatcher(
     this,
     config.getString("id"),
     config.getInt("throughput"),
@@ -16,11 +16,11 @@ class DispatcherConfigurator(config: Config, prerequisites: DispatcherPrerequisi
     configureExecutor(),
     config.getDuration("shutdown-timeout", TimeUnit.MILLISECONDS).millis
   ) { dispatcher =>
-    override def execute(runnable: Runnable) = {
+    override def execute(runnable: Runnable): Unit = {
       val context = contextSupplier.get()
-      super.execute(new Runnable {
-        def run() = context.run(runnable)
-      })
+      super.execute(() => context.run(runnable))
     }
   }
+
+  override def dispatcher(): Dispatcher = configuredDispatcher
 }
