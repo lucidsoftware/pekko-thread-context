@@ -3,7 +3,7 @@ on:
   pull_request:
   push:
     branches:
-      - master
+      - main
     tags:
       - "*.*"
 
@@ -15,7 +15,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v7
-      - uses: actions/setup-java@v3
+      - uses: actions/setup-java@v5
         with:
           java-version: '${{ env.java_version }}'
           distribution: corretto
@@ -39,7 +39,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v7
-      - uses: actions/setup-java@v3
+      - uses: actions/setup-java@v5
         with:
           java-version: '${{ env.java_version }}'
           distribution: corretto
