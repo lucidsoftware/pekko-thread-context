@@ -24,14 +24,15 @@ jobs:
       - name: Set SBT_OPTS
         run: bash generate_sbt_opts.sh
       - name: Build
-        run: sbt package
+        run: sbt +package
       - uses: actions/upload-artifact@v7
         with:
           name: jars
-          path: '*/target/*.jar'
+          path: 'target/out/jvm/scala-*/pekko-actor-thread-context/*.jar'
+          if-no-files-found: error
           retention-days: 1
       - name: Test
-        run: sbt test
+        run: sbt +test
   publish:
     if: "${{ github.event_name != 'pull_request' && github.repository == 'lucidsoftware/pekko-thread-context' }}"
     needs: build
@@ -62,6 +63,7 @@ jobs:
         uses: actions/download-artifact@v8
         with:
           name: jars
+          path: artifacts
       - name: Upload Assets
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

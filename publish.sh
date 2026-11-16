@@ -3,9 +3,9 @@ set -e
 
 echo "$PGP_SECRET" | base64 --decode | gpg --import
 if [[ $GITHUB_REF == refs/tags/* ]]; then
-      command="; publishSigned; sonatypeBundleRelease"
+      command="; +publishSigned; sonaRelease"
   else
-      command="publishSigned"
+      command="+publishSigned"
 fi
 echo "Running: sbt \"$command\""
 exec sbt "$command"

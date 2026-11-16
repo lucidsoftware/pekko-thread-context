@@ -8,6 +8,20 @@ Propagate thread-local values across Pekko actors. See
 
 Currently works only for local actor systems.
 
+Supports Scala 2.12.21 and 2.13.18 (the default), with Pekko 1.0.2.
+
+## Build and test
+
+Using JDK 25, package and test both supported Scala versions:
+
+```sh
+sbt +package
+sbt +test
+```
+
+Use `sbt package` or `sbt test` to build only the default Scala version.
+Cross-built jars are written to `target/out/jvm/scala-*/pekko-actor-thread-context/`.
+
 ## Install
 
 ```scala
@@ -21,3 +35,11 @@ In the configuration for your actor system,
 ```hocon
 actor.default-dispatcher.type = com.lucidchart.pekko.threadcontext.DefaultDispatcherConfigurator
 ```
+
+## Publishing
+
+Publishing uses sbt's native Sonatype Central Portal support and sbt-pgp.
+Set `SONATYPE_USERNAME` and `SONATYPE_PASSWORD` to a Central Portal user token's
+username and password in CI. Snapshot publishing must be enabled for the namespace.
+`publish.sh` signs and publishes both Scala variants with `+publishSigned`, then
+runs `sonaRelease` once for tagged releases.
