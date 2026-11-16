@@ -2,5 +2,4 @@
 
 set -x
 tag="${GITHUB_REF#refs/tags/}"
-targets=($(printf -- "-a %s " */target/*.jar))
-hub release create "${targets[@]}" -m "Release $tag" $tag
+gh release create "$tag" -t "Release $tag" ./*/target/*.jar
